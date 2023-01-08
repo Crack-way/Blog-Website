@@ -1,20 +1,35 @@
 {% extends 'core/base.html' %}
 {% block title %}Login {% endblock title %}
 {% block content %}
-<div class="container" >
-    <h1 style="text-align:center"> login</h1>
-    <form method="POST">
-        {% csrf_token %}
-        
-        <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="password" name="username">
+{% load static %}
+<div class="container">
+  
+          <main class="form-signin w-100 m-auto">
+            <form method="POST">
+              {% csrf_token %}
+  
+            <img class="mb-4" src="{% static 'img/blog.png'  %}" alt="" width="72" height="57">
+              <h1 class="h3 mb-3 fw-normal">Please login in</h1>
+            
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
+                <label for="username">Username</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+                <label for="password">Password</label>
+              </div>
+            
+          
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            </form>
+            </main>
+
         </div>
-        <div class="mb-3">
-          <label class="form-label" for="password">Password</label>
-          <input type="password" class="form-control" id="content" name="password">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+          
+      </div>
+    </div>
+  </div>
+
 </div>
 {% endblock content %}
